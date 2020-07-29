@@ -1,0 +1,21 @@
+server:
+  port: 9004
+spring:
+  application:
+    name: nacos-namespace-one
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: a7fbc559-192b-43ec-a805-b6a3c1b1fbef
+        group: namespace-one-dev
+      config:
+        server-addr: 127.0.0.1:8848
+        prefix: ${spring.application.name}
+        file-extension: yml
+        namespace: a7fbc559-192b-43ec-a805-b6a3c1b1fbef
+        group: namespace-one-dev
+nacos:
+  config: namespace-one-dev

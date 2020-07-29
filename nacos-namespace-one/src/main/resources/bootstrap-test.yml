@@ -1,0 +1,19 @@
+server:
+  port: 9005
+spring:
+  application:
+    name: nacos-namespace-one
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: 60eaa49f-b64c-4cf7-89f3-309b3ef1c988
+        group: namespace-one-test
+      config:
+        server-addr: 127.0.0.1:8848
+        prefix: ${spring.application.name}
+        file-extension: yml
+        namespace: 60eaa49f-b64c-4cf7-89f3-309b3ef1c988
+        group: namespace-one-test
+nacos:
+  config: namespace-one-test
